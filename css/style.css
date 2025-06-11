@@ -395,11 +395,11 @@
 .main_banner .title h2 {
     position: relative;
 
-    font-family: spartan;
-    src: url(../css/fonts/Spartan-VariableFont_wght.woff);
+    /* font-family: spartan;
+    src: url(../css/fonts/Spartan-VariableFont_wght.woff); */
 
-    /* font-family: montserrat;
-    src: url(../css/fonts/Montserrat-Light.woff); */
+    font-family: montserrat;
+    src: url(../css/fonts/Montserrat-Light.woff);
 
     font-weight: 10;
     font-size: clamp(8rem, 18vw, 220px);

@@ -23,14 +23,14 @@
 }
 
 .default .title h2 {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 300;
     text-align: center;
 }
 
 .default .title p {
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     text-align: center;
 }

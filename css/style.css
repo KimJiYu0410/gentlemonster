@@ -90,14 +90,11 @@
 
     height: 0;
     overflow: hidden;
-
-
-
 }
 
 .header .img_box {
     position: absolute;
-    top: 120px;
+    top: 150px;
     left: 50%;
     z-index: 2;
 
@@ -106,7 +103,7 @@
     flex-direction: column;
     align-items: flex-start;
 
-    height: 280px;
+    height: 200px;
 
     max-width: 1400px;
     width: 100%;
@@ -115,9 +112,6 @@
 
     height: 0;
     overflow: hidden;
-
-
-
 }
 
 .header:hover .img_box {
@@ -128,7 +122,7 @@
 
 
 .header .img_box img {
-    height: 120px;
+    height: 200px;
     border-radius: 12px;
     /* 모서리 둥글게 */
 
@@ -303,7 +297,7 @@
     }
 }
 
-
+/* 안경슬라이드*/
 .movie video {
     width: 100%;
 }
@@ -312,16 +306,6 @@
     background: #f3f4f6;
 }
 
-.main_best .title h2 {
-    text-align: center;
-    font-size: 32px;
-    padding: ;
-}
-
-.main_best .title p {
-    text-align: center;
-    font-size: 16px;
-}
 
 .main_best .swiper-wrapper {
     transition-timing-function: linear;
@@ -338,6 +322,7 @@
 
 .main_best .slide_wrap .itm figure {
     position: relative;
+    /* 글자의 위치 기준점 */
 }
 
 .main_best .slide_wrap .itm img:nth-child(1) {
@@ -356,13 +341,24 @@
 }
 
 
-
 .main_best .slide_wrap .itm img:hover {
     transform: scale(1);
 }
 
-.main_best .slide_wrap .itm p {
+.main_best .slide_wrap .itm .info {
+    position: absolute;
+    top: 70%;
+    /* 50% → 70%로 내려서 하단으로 이동 */
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    font-size: 14px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px 12px;
+    border-radius: 8px;
+    z-index: 10;
+    white-space: nowrap;
 }
 
 /* 배너부분 정리*/
@@ -485,7 +481,7 @@
 }
 
 .main_product .itm {
-    margin: 15px 0 15px 40px;
+    margin: 40px 20px 40px 20px;
     /* 아래쪽 여백 40px로 그림자 공간 확보 */
     background: #fff;
     border-radius: 20px;
@@ -536,7 +532,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
+    background: #c2c4c9;
+    color: #f3f4f6;
     border-radius: 50%;
     width: 42px;
     height: 42px;
@@ -552,7 +549,7 @@
 }
 
 .main_product .arrows button:hover {
-    background: #333;
+    background: #666;
     color: #fff;
 }
 
@@ -571,21 +568,39 @@
     justify-content: center;
 }
 
+/* 버튼*/
+/* 기존 너비, 높이 유지하면서 더 얇고 샤프한 라인 */
 .main_product .slick-dots li button {
-    background: #333;
-    color: #fff;
-
-    width: 16px;
-    height: 16px;
-
-    font-size: 12px;
-    border-radius: 50%;
+    width: 40px;
+    /* 기존 너비 유지 */
+    height: 4px;
+    /* 높이 좀 줄여서 더 얇게 */
+    border-radius: 1.5px;
+    /* 끝을 살짝만 둥글게 해서 샤프함 유지 */
+    background: #bbb;
+    /* 연한 그레이 계열로 존재감 유지 */
+    padding: 0;
+    border: none;
+    transition: all 0.3s ease;
+    text-indent: -9999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* 은은한 그림자 추가 */
 }
 
+/* 활성 상태 */
 .main_product .slick-dots li.slick-active button {
-    background: #aaa;
-    /* 바뀌는 숫자 컬러*/
+    background: #333;
+    /* 더 진한 그레이로 강조 */
+    width: 60px;
+    /* 기존처럼 넓게 */
+    height: 4px;
+    /* 얇은 높이 유지 */
+    border-radius: 1.5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    /* 좀 더 뚜렷한 그림자 */
 }
+
+
 
 .main_content {
     background: #f9f9f9;
@@ -594,8 +609,9 @@
 .main_content .inner {
     max-width: none;
     width: 100%;
-    padding: 0;
-    /* 필요하면 줄이기 */
+    padding: 0 20px;
+    /* 좌우 20px씩 여백 */
+
 }
 
 .main_content .tab_menu {
@@ -668,7 +684,7 @@
 
 .main_content .tab_content .con img {
     background: #fff;
-    border-radius: 30px;
+    border-radius: 0;
     /* 원하는 정도로 조절 */
 }
 
@@ -748,9 +764,25 @@
 }
 
 .to_top button {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background: #666;
+    color: #fff;
+    /* 아이콘이나 텍스트가 있다면 흰색으로 */
+    border: none;
+    border-radius: 50%;
+    /* 이게 핵심! 완전한 원형 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* 그림자 효과 */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.to_top button:hover {
+    background: #444;
+    /* hover 시 더 진한 회색 */
+    transform: translateY(-4px);
+    /* 약간 위로 떠오르는 효과 */
 }
 
 /* .title h2 {
